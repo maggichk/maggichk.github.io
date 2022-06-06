@@ -134,12 +134,12 @@ function copy(dest, source) {
             paper_count += 1
         }
 
-        document.write("<h2>Privacy Preserving Machine Learning</h2>")
+        document.write("<h3>Privacy Preserving Machine Learning</h3>")
         document.write("<ul>")
         add_paper("MediSC: Towards Secure and Lightweight Deep Learning as a Medical Diagnostic Service",
             "<b>Xiaoning Liu</b>, Yifeng Zheng, Xingliang Yuan, and Xun Yi",
             "In the 26th European Symposium on Research in Computer Security (ESORICS), 2021, (<b>Best Paper Award</b>, Acceptance rate: 71/351=20.2%)",
-            null,
+            null,//link
             "@inproceedings{liu2021medisc,title={Medisc: Towards secure and lightweight deep learning as a medical diagnostic service},author={Liu, Xiaoning and Zheng, Yifeng and Yuan, Xingliang and Yi, Xun},booktitle={Proc. of ESORICS},year={2021}}",
             "abstract",
             "papers/medisc.pdf",
@@ -154,7 +154,7 @@ function copy(dest, source) {
             "Journal of Computer Security (JCS), accepted, 2022",
             null,
             null,
-            "abstract",
+            "The striking progress of deep learning paves the way towards intelligent and quality medical diagnostic services. Enterprises deploy such services via the neural network (NN) inference, yet confronted with rising privacy concerns of the medical data being diagnosed and the pretrained NN models. We propose MediSC, a system framework that enables enterprises to offer secure medical diagnostic service to their customers via an execution of NN inference in the ciphertext domain. MediSC ensures the privacy of both parties with cryptographic guarantees. At the heart, we present an efficient and communication-optimized secure inference protocol that purely relies on the lightweight secret sharing techniques and can well cope with the commonly-used linear and non-linear NN layers. Compared to the garbled circuits based solutions, the latency and communication of MediSC are 24x lower and 868x less for the secure ReLU, and 20x lower and 314x less for the secure Max-pool. We evaluate MediSC on two benchmark and four real-world medical datasets, and comprehensively compare it with prior arts. The results demonstrate the promising performance of MediSC, which is much more bandwidthefficient compared to prior works.",
             "papers/cryptmed.pdf",
             null,
             null,
@@ -167,7 +167,7 @@ function copy(dest, source) {
             "IEEE Transactions on Dependable and Secure Computing, accepted, 2022.",
             null,
             "@article{liu2022securely,title={Securely Outsourcing Neural Network Inference to the Cloud with Lightweight Techniques},author={Liu, Xiaoning and Zheng, Yifeng and Yuan, Xingliang and Yi, Xun},journal={IEEE Transactions on Dependable and Secure Computing}, year={2022},publisher={IEEE}}",
-            "abstract",
+            "Neural network (NN) inference services enrich many applications, like image classification, object recognition, facial verification, and more. These NN inference services are increasingly becoming an essential offering from cloud computing providers, where end-users' data are offloaded to the cloud for inference under a customized model. However, current cloud-based inference services operate on clear inputs and NN models, raising paramount privacy concerns. Individual user data may contain private information that should always remain confidential. Meanwhile, the NN model is deemed proprietary to the model owner as model training requires substantial resources. In this paper, we present, tailor, and evaluate Sonic, a lightweight secure NN inference service delegated in the cloud. Sonic leverages the cloud computing paradigm to fully outsource the secure inference, freeing end devices and model owners from being actively online for assistance. Sonic guards both user input and model privacy along the whole service flow. We design a series of secure and efficient NN layer functions purely using lightweight cryptographic primitives. Extensive evaluations demonstrate that Sonic achieves up to 60x bandwidth saving in online inference compared to prior art.",
             "papers/sonic.pdf",
             null,
             null,
@@ -180,8 +180,68 @@ function copy(dest, source) {
             "IEEE Transactions on Information Forensics and Security, Accepted, 2021.",
             null,
             "@article{liu2021leia,\n\t title={Leia: A lightweight cryptographic neural network inference system at the edge}, author={Liu, Xiaoning and Wu, Bang and Yuan, Xingliang and Yi, Xun}, journal={IEEE Transactions on Information Forensics and Security}, volume={17},pages={237--252}, year={2021}, publisher={IEEE}}",
-            "abstract",
+            "The advances in machine learning have revealed its great potential for emerging mobile applications such as face recognition and voice assistant. Models trained via a Neural Network (NN) can offer accurate and efficient inference services for mobile users. Unfortunately, the current deployment of such service encounters privacy concerns. Directly offloading the model to the mobile device violates model privacy of the model owner, while feeding user input to the service compromises user privacy. To address this issue, we propose Leia, a lightweight cryptographic NN inference system at the edge. Leia is designed from two mobile-friendly perspectives. First, it leverages the paradigm of edge computing wherein the inference procedure keeps the model closer to the mobile user to foster low latency service. Specifically, Leia’s architecture consists of two non-colluding edge services to obliviously perform NN inference on the encoded user data and model. Second, Leia’s realization makes the judicious use of potentially constrained computational and communication resources in edge devices. We adapt the Binarized Neural Network (BNN), a trending flavor of NN with low inference overhead, and purely choose the lightweight secret sharing techniques to realize secure blocks of BNN. We implement Leia and deploy it on Raspberry Pi. Empirical evaluations on benchmark and medical datasets via various models demonstrate the practicality of Leia.",
             "papers/leia.pdf",
+            null,
+            null,
+            null,
+            null
+        )
+        document.write("</ul>")
+
+        document.write("<h3>Privacy Preserving Collaborative Mining</h3>")
+        document.write("<ul>")
+        add_paper("Privacy-Preserving Collaborative Analytics on Medical Time Series Data",
+            "<b>Xiaoning Liu</b>, Yifeng Zheng, Xun Yi, and Surya Nepal",
+            "IEEE Transactions on Dependable and Secure Computing (TDSC), accepted, 2020",
+            null,
+            "@article{liu2020privacy, title={Privacy-preserving collaborative analytics on medical time series data}, author={Liu, Xiaoning and Zheng, Yifeng and Yi, Xun and Nepal, Surya}, journal={IEEE Transactions on Dependable and Secure Computing},  year={2020}, publisher={IEEE}}",
+            "abstract",
+            "papers/dtw-tdsc.pdf",
+            null,
+            null,
+            null,
+            null
+        )
+
+        add_paper("Privacy-preserving collaborative medical time series analysis based on dynamic time warping",
+            "<b>Xiaoning Liu</b> and Xun Yi",
+            "In the 24th European Symposium on Research in Computer Security (ESORICS), , Luxembourg, September 23-27, 2019. (Acceptance ratio: 67/344= 19.5%)",
+            null,
+            "@inproceedings{liu2019privacy, title={Privacy-preserving collaborative medical time series analysis based on dynamic time warping}, author={Liu, Xiaoning and Yi, Xun}, booktitle={European Symposium on Research in Computer Security}, pages={439--460}, year={2019}, organization={Springer}}",
+            "Evaluating medical time series (e.g., physiological sequences) under dynamic time warping (DTW) derives insights assisting biomedical research and clinical decision making. Due to the natural distribution of medical data, a collaboration among multiple healthcare institutes is required to carry out a reliable and quality medical judgment. Yet sharing medical data cross the boundaries of multiple institutions faces widespread privacy threats, along with increasingly stringent laws and privacy regulations nowadays. Addressing such demands, we propose a privacy-preserving system tailored for the DTW-based analysis over the decentralized medical time series sequences. Our system constructs a secure and scalable architecture to deliver comprehensive results from a joint data analytic task with privacy preservation. To accelerate complicated DTW query processing, our system adapts the advancement in secure multi-party computation (MPC) framework to realize encrypted DTW computation, decomposing complicated and iterative operations into atomic functions under suitable MPC primitives and optimized for DTW. Moreover, our system introduces a secure hybrid pruning strategy that diminishes the volume of time series sequences that are submitted before and processed within the encrypted DTW query. We implement a prototype and evaluate its performance on Amazon Cloud. The empirical evaluation demonstrates the feasibility of our system in practice.",
+            "papers/dtw-esorics.pdf",
+            null,
+            null,
+            null,
+            null
+        )
+        document.write("</ul>")
+
+
+
+        document.write("<h3>Privacy Preserving Collaborative Mining</h3>")
+        document.write("<ul>")
+        add_paper("Privacy-Preserving Collaborative Analytics on Medical Time Series Data",
+            "<b>Xiaoning Liu</b>, Yifeng Zheng, Xun Yi, and Surya Nepal",
+            "IEEE Transactions on Dependable and Secure Computing (TDSC), accepted, 2020",
+            null,
+            "@article{liu2020privacy, title={Privacy-preserving collaborative analytics on medical time series data}, author={Liu, Xiaoning and Zheng, Yifeng and Yi, Xun and Nepal, Surya}, journal={IEEE Transactions on Dependable and Secure Computing},  year={2020}, publisher={IEEE}}",
+            "abstract",
+            "papers/dtw-tdsc.pdf",
+            null,
+            null,
+            null,
+            null
+        )
+
+        add_paper("Privacy-preserving collaborative medical time series analysis based on dynamic time warping",
+            "<b>Xiaoning Liu</b> and Xun Yi",
+            "In the 24th European Symposium on Research in Computer Security (ESORICS), , Luxembourg, September 23-27, 2019. (Acceptance ratio: 67/344= 19.5%)",
+            null,
+            "@inproceedings{liu2019privacy, title={Privacy-preserving collaborative medical time series analysis based on dynamic time warping}, author={Liu, Xiaoning and Yi, Xun}, booktitle={European Symposium on Research in Computer Security}, pages={439--460}, year={2019}, organization={Springer}}",
+            "abstract",
+            "papers/dtw-esorics.pdf",
             null,
             null,
             null,
