@@ -196,7 +196,7 @@ function copy(dest, source) {
             "IEEE Transactions on Dependable and Secure Computing (TDSC), accepted, 2020",
             null,
             "@article{liu2020privacy, title={Privacy-preserving collaborative analytics on medical time series data}, author={Liu, Xiaoning and Zheng, Yifeng and Yi, Xun and Nepal, Surya}, journal={IEEE Transactions on Dependable and Secure Computing},  year={2020}, publisher={IEEE}}",
-            "abstract",
+            "Medical time series data analytics based on dynamic time warping (DTW) greatly benefits modern medical research. Driven by the distributed nature of medical data, the collaboration of multiple healthcare institutions is usually necessary for a sound medical conclusion. Among others, a typical use case is disease screening for public health, where multiple healthcare institutions wish to collaboratively detect over their joint datasets the patients whose medical records have similar features to the given query samples. However, sharing the medical data faces critical privacy obstacles with the increasingly strict legal regulations on data privacy. In this article, we present the design of a novel system enabling privacy-preserving DTW-based analytics on distributed medical time series datasets. Our system is built from a delicate synergy of techniques from both cryptography and data mining domains, where the key idea is to leverage observations on the advancements in plaintext DTW analytics (e.g., clustering and pruning) to facilitate the scalable computation in the ciphertext domain, through our tailored security design. Extensive experiments over real medical time series datasets demonstrate the promising performance of our system, e.g., our system is able to process a secure DTW query computation over 15K time series sequences in 34 minutes.",
             "papers/dtw-tdsc.pdf",
             null,
             null,
@@ -206,7 +206,7 @@ function copy(dest, source) {
 
         add_paper("Privacy-preserving collaborative medical time series analysis based on dynamic time warping",
             "<b>Xiaoning Liu</b> and Xun Yi",
-            "In the 24th European Symposium on Research in Computer Security (ESORICS), , Luxembourg, September 23-27, 2019. (Acceptance ratio: 67/344= 19.5%)",
+            "In the 24th European Symposium on Research in Computer Security (ESORICS), Luxembourg, September 23-27, 2019. (Acceptance ratio: 67/344= 19.5%)",
             null,
             "@inproceedings{liu2019privacy, title={Privacy-preserving collaborative medical time series analysis based on dynamic time warping}, author={Liu, Xiaoning and Yi, Xun}, booktitle={European Symposium on Research in Computer Security}, pages={439--460}, year={2019}, organization={Springer}}",
             "Evaluating medical time series (e.g., physiological sequences) under dynamic time warping (DTW) derives insights assisting biomedical research and clinical decision making. Due to the natural distribution of medical data, a collaboration among multiple healthcare institutes is required to carry out a reliable and quality medical judgment. Yet sharing medical data cross the boundaries of multiple institutions faces widespread privacy threats, along with increasingly stringent laws and privacy regulations nowadays. Addressing such demands, we propose a privacy-preserving system tailored for the DTW-based analysis over the decentralized medical time series sequences. Our system constructs a secure and scalable architecture to deliver comprehensive results from a joint data analytic task with privacy preservation. To accelerate complicated DTW query processing, our system adapts the advancement in secure multi-party computation (MPC) framework to realize encrypted DTW computation, decomposing complicated and iterative operations into atomic functions under suitable MPC primitives and optimized for DTW. Moreover, our system introduces a secure hybrid pruning strategy that diminishes the volume of time series sequences that are submitted before and processed within the encrypted DTW query. We implement a prototype and evaluate its performance on Amazon Cloud. The empirical evaluation demonstrates the feasibility of our system in practice.",
@@ -220,28 +220,28 @@ function copy(dest, source) {
 
 
 
-        document.write("<h3>Privacy Preserving Collaborative Mining</h3>")
+        document.write("<h3>Secure Similarity Oriented Search</h3>")
         document.write("<ul>")
-        add_paper("Privacy-Preserving Collaborative Analytics on Medical Time Series Data",
-            "<b>Xiaoning Liu</b>, Yifeng Zheng, Xun Yi, and Surya Nepal",
-            "IEEE Transactions on Dependable and Secure Computing (TDSC), accepted, 2020",
+        add_paper("EncSIM: An encrypted similarity search service for distributed high-dimensional datasets",
+            "<b>Xiaoning Liu</b>, Xingliang Yuan, and Cong Wang",
+            "In the 2017 IEEE/ACM 25th International Symposium on Quality of Service (IWQoS), 2017, Barcelona, Spain. (acceptance ratio 19.5%)",
             null,
-            "@article{liu2020privacy, title={Privacy-preserving collaborative analytics on medical time series data}, author={Liu, Xiaoning and Zheng, Yifeng and Yi, Xun and Nepal, Surya}, journal={IEEE Transactions on Dependable and Secure Computing},  year={2020}, publisher={IEEE}}",
-            "abstract",
-            "papers/dtw-tdsc.pdf",
+            "@inproceedings{liu2017encsim, title={EncSIM: An encrypted similarity search service for distributed high-dimensional datasets}, author={Liu, Xiaoning and Yuan, Xingliang and Wang, Cong}, booktitle={2017 IEEE/ACM 25th International Symposium on Quality of Service (IWQoS)}, pages={1--10}, year={2017}, organization={IEEE}}",
+            null,
+            "papers/encsim.pdf",
             null,
             null,
             null,
             null
         )
 
-        add_paper("Privacy-preserving collaborative medical time series analysis based on dynamic time warping",
-            "<b>Xiaoning Liu</b> and Xun Yi",
-            "In the 24th European Symposium on Research in Computer Security (ESORICS), , Luxembourg, September 23-27, 2019. (Acceptance ratio: 67/344= 19.5%)",
+        add_paper("Towards Privacy-Preserving Forensic Analysis for Time-series Medical Data",
+            "<b>Xiaoning Liu</b>, Xingliang Yuan, and Joseph Liu",
+            "in the 17th IEEE International Conference on Trust, Security and Privacy in Computing And Communications (TrustCom'18), New York, USA",
             null,
-            "@inproceedings{liu2019privacy, title={Privacy-preserving collaborative medical time series analysis based on dynamic time warping}, author={Liu, Xiaoning and Yi, Xun}, booktitle={European Symposium on Research in Computer Security}, pages={439--460}, year={2019}, organization={Springer}}",
-            "abstract",
-            "papers/dtw-esorics.pdf",
+            "@inproceedings{liu2018towards, title={Towards privacy-preserving forensic analysis for time-series medical data}, author={Liu, Xiaoning and Yuan, Xingliang and Liu, Joseph}, booktitle={2018 17th IEEE International Conference On Trust, Security And Privacy In Computing And  Communications/12th IEEE International Conference On Big Data Science And Engineering (TrustCom/BigDataSE)}, pages={1664--1668}, year={2018}, organization={IEEE}}",
+            null,
+            "papers/trustcom.pdf",
             null,
             null,
             null,
