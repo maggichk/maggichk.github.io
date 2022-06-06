@@ -45,7 +45,7 @@ function copy(dest, source) {
 <script>
         paper_count = 0
 
-        function add_paper(title, authors, conference, link, bib, abstract, arxiv_link, code, data, slides, talk, msg) {
+        function add_paper(title, authors, conference, link, bib, abstract, pdf, code, arxiv_link, slides, talk, msg) {
             list_entry = "<li style=\"font-size:18px\">"
             if (link != null)
                 list_entry += "<a href=\"" + link + "\">"
@@ -63,14 +63,14 @@ function copy(dest, source) {
                 list_entry += "<div id=\"abstract" + paper_count + "\" style=\"display:none\">" + abstract + "</div>"
                 list_entry += "<a href=\"javascript:copy(div" + paper_count + ",abstract" + paper_count + ")\"> <span class=\"label label-warning\">abstract</span></a>"
             }
-            if (arxiv_link != null)
-                list_entry += " <a href=\"" + arxiv_link + "\"><span class=\"label label-primary\">arXiv</span></a>"
+            if (pdf != null)
+                list_entry += " <a href=\"" + pdf + "\"><span class=\"label label-primary\">PDF</span></a>"
 
             if (code != null)
                 list_entry += " <a href=\"" + code + "\"><span class=\"label label-danger\">code/models</span></a>"
 
-            if (data != null)
-                list_entry += " <a href=\"" + data + "\"><span class=\"label label-default\">data</span></a>"
+           if (arxiv_link != null)
+                list_entry += " <a href=\"" + arxiv_link + "\"><span class=\"label label-primary\">arXiv</span></a>"
 
             if (slides != null)
                 list_entry += " <a href=\"" + slides + "\"><span class=\"label label-info\">slides/poster</span></a>"
@@ -98,7 +98,7 @@ function copy(dest, source) {
             null,
             "@inproceedings{liu2021medisc,title={Medisc: Towards secure and lightweight deep learning as a medical diagnostic service},author={Liu, Xiaoning and Zheng, Yifeng and Yuan, Xingliang and Yi, Xun},booktitle={Proc. of ESORICS},year={2021}}",
             "abstract",
-            "https://github.com/maggichk/maggichk.github.io/blob/main/papers/medisc.pdf",
+            "papers/medisc.pdf",
             null,
             null,
             null,
