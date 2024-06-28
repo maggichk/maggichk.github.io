@@ -138,9 +138,23 @@ function copy(dest, source) {
         document.write("<h3>Privacy Preserving Machine Learning</h3>")
 
         document.write("<ul>")
-        add_paper("OblivGNN: Oblivious Inference on Transductive and Inductive Graph Neural Network",
+        add_paper("GoCrowd: Obliviously Aggregating Crowd Wisdom with Quality Awareness in Crowdsourcing",
+            "<b>Xiaoning Liu</b>, Yifeng Zheng, Xingliang Yuan, and Xun Yi",
+            "IEEE Transactions on Dependable and Secure Computing (TDSC), accepted, 2024",
+            null,
+            "@article{liu2024gocrowd, title={GoCrowd: Obliviously Aggregating Crowd Wisdom With Quality Awareness in Crowdsourcing}, author={Liu, Xiaoning and Zheng, Yifeng and Yuan, Xingliang and Yi, Xun}, journal={IEEE Transactions on Dependable and Secure Computing}, year={2024}, publisher={IEEE} }", //citation
+            null, //abstract
+            null, //paper
+            null, 
+            null,
+            null,
+            null
+        )
+    
+    
+            add_paper("OblivGNN: Oblivious Inference on Transductive and Inductive Graph Neural Network",
             "Zhibo Xu, Shangqi Lai, <b>Xiaoning Liu</b>, Alsharif Abuadbba, Xingliang Yuan, and Xun Yi",
-            "In the 33rd USENIX Security Symposium (USENIX Security), 2024",
+            "In the 33rd USENIX Security Symposium (USENIX Security), 2024, (acceptance ratio: 17%)",
             null,//link
             null,
             null,
@@ -153,7 +167,7 @@ function copy(dest, source) {
     
         add_paper("MediSC: Towards Secure and Lightweight Deep Learning as a Medical Diagnostic Service",
             "<b>Xiaoning Liu</b>, Yifeng Zheng, Xingliang Yuan, and Xun Yi",
-            "In the 26th European Symposium on Research in Computer Security (ESORICS), 2021, (the only one <b>Best Paper Award</b> out of 351 submissions, acceptance ratio: 71/351=20.2%)",
+            "In the 26th European Symposium on Research in Computer Security (ESORICS), 2021, (the only one <b>Best Paper Award</b> of 351 submissions, acceptance ratio: 71/351=20.2%)",
             null,//link
             "@inproceedings{liu2021medisc,title={Medisc: Towards secure and lightweight deep learning as a medical diagnostic service},author={Liu, Xiaoning and Zheng, Yifeng and Yuan, Xingliang and Yi, Xun},booktitle={Proc. of ESORICS},year={2021}}",
             "The striking progress of deep learning paves the way towards intelligent and quality medical diagnostic services. Enterprises deploy such services via the neural network (NN) inference, yet confronted with rising privacy concerns of the medical data being diagnosed and the pretrained NN models. We propose MediSC, a system framework that enables enterprises to offer secure medical diagnostic service to their customers via an execution of NN inference in the ciphertext domain. MediSC ensures the privacy of both parties with cryptographic guarantees. At the heart, we present an efficient and communication-optimized secure inference protocol that purely relies on the lightweight secret sharing techniques and can well cope with the commonly-used linear and non-linear NN layers. Compared to the garbled circuits based solutions, the latency and communication of MediSC are 24x lower and 868x less for the secure ReLU, and 20x lower and 314x less for the secure Max-pool. We evaluate MediSC on two benchmark and four real-world medical datasets, and comprehensively compare it with prior arts. The results demonstrate the promising performance of MediSC, which is much more bandwidthefficient compared to prior works.",
@@ -163,19 +177,7 @@ function copy(dest, source) {
             null,
             null
         )
-         add_paper("GoCrowd: Obliviously Aggregating Crowd Wisdom with Quality Awareness in Crowdsourcing",
-            "<b>Xiaoning Liu</b>, Yifeng Zheng, Xingliang Yuan, and Xun Yi",
-            "IEEE Transactions on Dependable and Secure Computing (TDSC), 2024",
-            null,
-            "@article{liu2024gocrowd, title={GoCrowd: Obliviously Aggregating Crowd Wisdom With Quality Awareness in Crowdsourcing}, author={Liu, Xiaoning and Zheng, Yifeng and Yuan, Xingliang and Yi, Xun}, journal={IEEE Transactions on Dependable and Secure Computing}, year={2024}, publisher={IEEE} }", //citation
-            null, //abstract
-            null, //paper
-            null, 
-            null,
-            null,
-            null
-        )
-
+         
         add_paper("MUD-PQFed: Towards Malicious User Detection in Privacy-Preserving Quantized Federated Learning",
             "Hua Ma, Qun Li, Yifeng Zheng, Zhi Zhang, <b>Xiaoning Liu</b>, Yansong Gao, Said F. Al-Sarawi, and Derek Abbott",
             "Computer & Security, 2023",
@@ -190,7 +192,7 @@ function copy(dest, source) {
         )
          add_paper("Securely Outsourcing Neural Network Inference to the Cloud with Lightweight Techniques",
             "<b>Xiaoning Liu</b>, Yifeng Zheng, Xingliang Yuan, and Xun Yi",
-            "IEEE Transactions on Dependable and Secure Computing (TDSC), 2022",
+            "IEEE Transactions on Dependable and Secure Computing (TDSC), accepted, 2022",
             null,
             "@article{liu2022securely,title={Securely Outsourcing Neural Network Inference to the Cloud with Lightweight Techniques},author={Liu, Xiaoning and Zheng, Yifeng and Yuan, Xingliang and Yi, Xun},journal={IEEE Transactions on Dependable and Secure Computing}, year={2022},publisher={IEEE}}",
             "Neural network (NN) inference services enrich many applications, like image classification, object recognition, facial verification, and more. These NN inference services are increasingly becoming an essential offering from cloud computing providers, where end-users' data are offloaded to the cloud for inference under a customized model. However, current cloud-based inference services operate on clear inputs and NN models, raising paramount privacy concerns. Individual user data may contain private information that should always remain confidential. Meanwhile, the NN model is deemed proprietary to the model owner as model training requires substantial resources. In this paper, we present, tailor, and evaluate Sonic, a lightweight secure NN inference service delegated in the cloud. Sonic leverages the cloud computing paradigm to fully outsource the secure inference, freeing end devices and model owners from being actively online for assistance. Sonic guards both user input and model privacy along the whole service flow. We design a series of secure and efficient NN layer functions purely using lightweight cryptographic primitives. Extensive evaluations demonstrate that Sonic achieves up to 60x bandwidth saving in online inference compared to prior art.",
