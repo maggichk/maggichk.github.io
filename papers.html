@@ -92,7 +92,7 @@ function copy(dest, source) {
         function add_paper(title, authors, conference, link, bib, abstract, pdf, code, arxiv_link, slides, talk, msg) {
             list_entry = "<li style=\"font-size:18px\">"
             if (link != null)
-                list_entry += "<a href=\"" + link + "\" + >"
+                list_entry += "<a href=\"" + link + "\" + target='_blank'>"
             list_entry += "<b>" + title + "</b>"
             if (link != null)
                 list_entry += "</a>"
