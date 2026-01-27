@@ -130,6 +130,32 @@ function copy(dest, source) {
             null
         )
 
+        add_paper("Privacy-Preserving Automated Deep Learning for Secure Inference Service",
+            "Fuyi Wang, Jinzhi Ouyang, Leo Yu Zhang, Lei Pan, Shengshan Hu, <b>Xiaoning Liu</b>, Robin Doss",
+            "IEEE Transactions on Dependable and Secure Computing, 2025",
+            "https://ieeexplore.ieee.org/abstract/document/11177552/",//link "https://doi.org/10.1016/j.cose.2023.103406",
+            null,//bib
+            null,//abstract    
+            null,//paper
+            null,
+            null,
+            null,
+            null
+        )
+
+        add_paper("MedShield: A Fast Cryptographic Framework for Private Multi-Service Medical Diagnosis",
+            "Fuyi Wang, Jinzhi Ouyang, <b>Xiaoning Liu</b>, Lei Pan, Leo Yu Zhang, Robin Doss",
+            "IEEE Transactions on Services Computing, 2025",
+            "https://ieeexplore.ieee.org/abstract/document/10829796/",//link "https://doi.org/10.1016/j.cose.2023.103406",
+            null,//bib
+            null,//abstract    
+            null,//paper
+            null,
+            null,
+            null,
+            null
+        )
+
         add_paper("GoCrowd: Obliviously Aggregating Crowd Wisdom with Quality Awareness in Crowdsourcing",
             "<b>Xiaoning Liu</b>, Yifeng Zheng, Xingliang Yuan, and Xun Yi",
             "IEEE Transactions on Dependable and Secure Computing (TDSC), accepted, 2024",
@@ -143,6 +169,7 @@ function copy(dest, source) {
             null
         )
     
+
     
         add_paper("OblivGNN: Oblivious Inference on Transductive and Inductive Graph Neural Network",
             "Zhibo Xu, Shangqi Lai, <b>Xiaoning Liu</b>, Alsharif Abuadbba, Xingliang Yuan, and Xun Yi",
@@ -269,7 +296,7 @@ function copy(dest, source) {
 
 
 
-        document.write("<details open><summary><p><h3>&#10148; Secure Collaborative Stream Analytics</h3></p></summary>")
+document.write("<details open><summary><p><h3>&#10148; Secure Collaborative Stream Analytics</h3></p></summary>")
         document.write("<ul>")
         add_paper("Privacy-Preserving Collaborative Analytics on Medical Time Series Data",
             "<b>Xiaoning Liu</b>, Yifeng Zheng, Xun Yi, and Surya Nepal",
@@ -326,8 +353,73 @@ function copy(dest, source) {
         null,
         null
     )
-        
-        document.write("</ul></details>")
+document.write("</ul></details>")
+
+
+
+
+document.write("<details open><summary><p><h3>&#10148; Machine Learning Security and Privacy</h3></p></summary>")
+document.write("<ul>")
+
+        add_paper("Imprint of the Forgotten: Stealthy Membership Inference In Unlearned Graph Neural Networks",
+        "He Zhang, Bang Wu, <b>Xiaoning Liu</b>, Karin Verspoor, Xun Yi",
+        "In the 40th AAAI Conference on Artificial Intelligence (AAAI),  2026, Singapore.",
+        "https://openreview.net/pdf?id=ikT9q8cdq9",//link
+        null, //bib
+        "Graphs effectively model interactions in real-world applications such as social and trade networks, where Graph Neural Networks (GNNs) excel at tasks such as link prediction to enhance user experiences. Despite these benefits, users raise privacy concerns as user data can be exploited to improve GNN performance without consent. Accordingly, various graph unlearning methods have been developed. Prior work shows that comparing models before and after unlearning enables attackers to launch former membership inference attacks (FMIA) on unlearned data. However, the imprint of unlearned data left in the unlearned model itself remains underexplored, and existing membership inference methods mainly exploit overfitting, making them ineffective for identifying unlearned data. To address this, we conducted theoretical analysis and proposed an attack framework targeting unlearned GNNs by learning the distribution patterns of unlearned data to distinguish them from normal test data. Extensive experiments on four real-world datasets and GNN architectures confirm our framework's effectiveness and reveal significant vulnerabilities in current graph unlearning methods.", //abstract
+        null, //pdf
+        null, //code
+        null, //arxiv
+        null, //slides
+        null, //talk
+        null //msg
+        ) //title, authors, conference, link, bib, abstract, pdf, code, arxiv_link, slides, talk, msg
+
+        add_paper("Dynamic graph unlearning: a general and efficient post-processing method via gradient transformation",
+        "He Zhang, Bang Wu, Xiangwen Yang, Xingliang Yuan, <b>Xiaoning Liu</b>, Xun Yi",
+        "In the ACM on Web Conference (WWW) 2025, Sydney, Australia.",
+        "https://dl.acm.org/doi/abs/10.1145/3696410.3714911",//link
+        null, //bib
+        "Dynamic graph neural networks (DGNNs) have emerged and been widely deployed in various web applications (e.g., Reddit) to serve users (e.g., personalized content delivery) due to their remarkable ability to learn from complex and dynamic user interaction data. Despite benefiting from high-quality services, users have raised privacy concerns, such as misuse of personal data (e.g., dynamic user-user/item interaction) for model training, requiring DGNNs to forget their data to meet AI governance laws (e.g., the right to be forgotten in GDPR). However, current static graph unlearning studies cannot unlearn dynamic graph elements and exhibit limitations such as the model-specific design or reliance on pre-processing, which disenable their practicability in dynamic graph unlearning. To this end, we study the dynamic graph unlearning for the first time and propose an effective, efficient, general, and post-processing method to implement DGNN unlearning. Specifically, we first formulate dynamic graph unlearning in the context of continuous-time dynamic graphs, and then propose a method called Gradient Transformation that directly maps the unlearning request to the desired parameter update. Comprehensive evaluations on six real-world datasets and state-of-the-art DGNN backbones demonstrate its effectiveness (e.g., limited drop or obvious improvement in utility) and efficiency (e.g., 7.23× speed-up) advantages. Additionally, our method has the potential to handle future unlearning requests with significant performance gains (e.g., 32.59× speed-up).",
+        null, //pdf
+        null, //code
+        null, //arxiv
+        null, //slides
+        null, //talk
+        null //msg
+        ) //title, authors, conference, link, bib, abstract, pdf, code, arxiv_link, slides, talk, msg
+
+        add_paper("Unsupervised Backdoor Detection and Mitigation for Spiking Neural Networks",
+        "Jiachen Li, Bang Wu, Xiaoyu Xia, <b>Xiaoning Liu</b>, Xun Yi, Xiuzhen Zhang",
+        "In the 28th International Symposium on Research in Attacks, Intrusions and Defenses (RAID),  2025, Gold Coast, Australia.",
+        null,//link
+        null, //bib
+        "Spiking Neural Networks (SNNs) have gained increasing attention for their superior energy efficiency compared to Artificial Neural Networks (ANNs). However, their security aspects, particularly under backdoor attacks, have received limited attention. Existing defense methods developed for ANNs perform poorly or can be easily bypassed in SNNs due to their event-driven and temporal dependencies. This paper identifies the key blockers that hinder traditional backdoor defenses in SNNs and proposes an unsupervised post-training detection framework, Temporal Membrane Potential Backdoor Detection (TMPBD), to overcome these challenges. TMPBD leverages the maximum margin statistics of temporal membrane potential (TMP) in the final spiking layer to detect target labels without any attack knowledge or data access. We further introduce a robust mitigation mechanism, Neural Dendrites Suppression Backdoor Mitigation (NDSBM), which clamps dendritic connections between early convolutional layers to suppress malicious neurons while preserving benign behaviors, guided by TMP extracted from a small, clean, unlabeled dataset. Extensive experiments on multiple neuromorphic benchmarks and state-of-the-art input-aware dynamic trigger attacks demonstrate that TMPBD achieves 100% detection accuracy, while NDSBM reduces the attack success rate from 100% to 8.44%, and to 2.81% when combined with detection, without degrading clean accuracy.",
+        null, //pdf
+        null, //code
+        null, //arxiv
+        null, //slides
+        null, //talk
+        null //msg
+        ) //title, authors, conference, link, bib, abstract, pdf, code, arxiv_link, slides, talk, msg
+
+
+        add_paper("A survey on federated unlearning: Challenges, methods, and future directions",
+        "Ziyao Liu, Yu Jiang, Jiyuan Shen, Minyi Peng, Kwok-Yan Lam, Xingliang Yuan, Xiaoning Liu",
+        "ACM Computing Surveys, 2024",
+        "https://dl.acm.org/doi/full/10.1145/3679014",//link
+        null, //bib
+        null, //abstract
+        null, //pdf
+        null, //code
+        null, //arxiv
+        null, //slides
+        null, //talk
+        null //msg
+        ) //title, authors, conference, link, bib, abstract, pdf, code, arxiv_link, slides, talk, msg
+
+
+document.write("</ul></details>")
 
 </script>
 
