@@ -1,166 +1,63 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <title>Maggie's Homepage</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Xiaoning Liu">
-    <meta name="keywords" content="Xiaoning Liu, Maggie Liu, Xiaoning Liu RMIT, Maggie Liu RMIT, Xiaoning Maggie Liu RMIT">
-    <meta name="robots" content="index,follow">
-    <meta name="description" content="Homepage of Maggie Liu">
-    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" media="screen,print" href="css/style.css" />
-    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen" />
+  <title>Award | Maggie Liu</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Xiaoning Liu" />
+  <meta name="keywords" content="Xiaoning Liu, Maggie Liu, Xiaoning Liu RMIT, Maggie Liu RMIT, Xiaoning Maggie Liu RMIT" />
+  <meta name="robots" content="index,follow" />
+  <meta name="description" content="Honors and awards of Maggie Liu" />
+  <style>
+    :root { color-scheme: dark; --bg:#0a0a0b; --line:rgba(255,255,255,.11); --text:rgba(255,255,255,.88); --muted:rgba(255,255,255,.64); --cyan:#7dd3fc; --pink:#ff3d77; --orange:#ff9d3c; }
+    * { box-sizing:border-box; }
+    body { margin:0; min-height:100vh; background:radial-gradient(circle at 18% 12%, rgba(255,61,119,.18), transparent 28rem), radial-gradient(circle at 85% 6%, rgba(6,182,212,.17), transparent 30rem), radial-gradient(circle at 70% 58%, rgba(224,174,255,.12), transparent 28rem), var(--bg); color:var(--text); font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    .shell { width:min(100%,1032px); margin:0 auto; padding:48px 24px 72px; }
+    .hero,.panel { border:1px solid var(--line); border-radius:34px; background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.025)); box-shadow:0 26px 80px rgba(0,0,0,.42); backdrop-filter:blur(18px); }
+    .hero { display:grid; gap:24px; padding:30px; }
+    .kicker { margin:0 0 10px; color:var(--cyan); font-size:13px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
+    h1 { margin:0; max-width:780px; background:linear-gradient(137deg,#ff3d77 0%,#ffb1ce 20%,#7dd3fc 43%,#06b6d4 58%,#e0aeff 78%,#ff9d3c 100%); -webkit-background-clip:text; background-clip:text; color:transparent; font-size:clamp(34px,6vw,62px); font-weight:720; line-height:1; }
+    h1 sup { color:#ffb1ce; -webkit-text-fill-color:#ffb1ce; font-size:.48em; vertical-align:super; }
+    .subtitle { max-width:720px; margin:18px 0 0; color:rgba(255,255,255,.72); font-size:clamp(17px,2.4vw,22px); line-height:1.45; }
+    .nav { display:flex; flex-wrap:wrap; gap:10px; }
+    .nav a { border:1px solid var(--line); border-radius:999px; background:rgba(255,255,255,.055); color:rgba(255,255,255,.76); font-size:14px; font-weight:650; padding:9px 14px; text-decoration:none; transition:transform .18s ease,border-color .18s ease,background .18s ease,color .18s ease; }
+    .nav a:hover,.nav a.active { transform:translateY(-1px); border-color:rgba(125,211,252,.42); background:rgba(125,211,252,.12); color:#fff; }
+    .panel { margin-top:28px; padding:28px; background:rgba(255,255,255,.035); }
+    .section-title { display:flex; align-items:center; gap:12px; margin:0 0 20px; color:#fff; font-size:clamp(24px,3vw,32px); font-weight:700; }
+    .mark { display:grid; width:34px; height:34px; place-items:center; flex:0 0 auto; border-radius:50%; background:linear-gradient(137deg,rgba(255,61,119,.95),rgba(125,211,252,.95)); color:#0a0a0b; font-size:18px; font-weight:800; }
+    .items { display:grid; gap:14px; margin:0; padding:0; list-style:none; }
+    .item { position:relative; border:1px solid rgba(255,255,255,.1); border-radius:22px; background:linear-gradient(145deg,rgba(26,26,28,.92),rgba(255,255,255,.035)); padding:18px 20px; color:var(--muted); font-size:15px; line-height:1.6; overflow:hidden; }
+    .item::before { content:""; position:absolute; inset:0 auto 0 0; width:4px; background:linear-gradient(180deg,var(--pink),var(--cyan),var(--orange)); opacity:.9; }
+    .item strong { color:#fff; font-weight:720; }
+    @media (max-width:640px) { .shell{padding:24px 14px 48px;} .hero,.panel{border-radius:26px; padding:22px 20px;} .item{border-radius:20px;} }
+  </style>
 </head>
-
 <body>
-<div class="container">
-<br>
-<br>
+<main class="shell">
+  <section class="hero">
+    <div>
+      <p class="kicker">Award</p>
+      <h1>SC<sup>2</sup>ale: Secure Collaborative Computation at Scale</h1>
+      <p class="subtitle">Research honors, fellowships, teaching awards, and paper recognitions.</p>
+    </div>
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="index.html">Home</a><a href="papers.html">Research</a><a href="people.html">People</a><a href="teaching.html">Teaching</a><a href="service.html">Service</a><a href="talk.html">Talk</a><a href="award.html" class="active">Award</a>
+    </nav>
+  </section>
 
-<!-- <div class="row">
-<div class="col-sm-3">
-<a href="images/profile.jpeg">
-<img class="img-responsive" style="max-height:200px;" src="images/profile.jpeg"/>
-</a>
-</div>
-
-<div class="col-sm-9">
-<div class="clearfix visible-xs-block"></div>
-<h1>Xiaoning (Maggie) Liu </h1>
-<p style="font-size: 18px">Lecturer<br>
-<a href="https://www.rmit.edu.au/about/schools-colleges/computing-technologies">School of Computing Technologies</a><br>
-<a href="https://www.rmit.edu.au/">RMIT University</a><br>
-<b>Email</b>: <tt>xiaoning.liu@rmit.edu.au</tt> <br>
-<div class="col-xs-2">
-<a href="https://scholar.google.com/citations?user=hjxSs-UAAAAJ&hl=en" title="gscholar"><img src="./images/gscholar.png" style="max-height:30px;" class="img-responsive"></a>
-</div>
-<div class="col-xs-2">
-<a href="https://orcid.org/0000-0002-9874-8839" title="ORCID"><img src="./images/orcid.svg" style="max-height:30px;" class="img-responsive"></a>
-</div>
-<div class="col-xs-2">
-<a href="https://www.linkedin.com/in/xiaoning-maggie-liu-79777316a/" title="linkedin"><img src="./images/linkedin.png" style="max-height:30px;" class="img-responsive"></a>
-</div>
-<div class="col-xs-2">
-<a href="https://twitter.com/maggie_cityu" title="twitter"><img src="./images/twitter.png" style="max-height:30px;" class="img-responsive"></a>
-</div>
-</p>
-</div>
-</div> -->
-
-
-<h3>Xiaoning (Maggie) Liu </h3>
-<p style="font-style: italic;
-  font-size: 20px;
-  line-height: 1.4;
-  margin-top: 0;
-  margin-bottom: 10px; color: transparent;">xxx<p>
-
-
-
-<hr/>
-<h3>
-  <a href="index.html">Home</a> /
-  <a href="papers.html">Research</a> /
-  <a href="people.html">People</a> /
-  <a href="teaching.html">Teaching</a> /
-  <a href="service.html">Service</a> /
-  <a href="talk.html">Talk</a> /
-  <a href="award.html">Award</a>
-</h3>
-<hr/>
-
-<style>
-    ul li{
-        font-family: Lato;
-        font-size: 18px;
-        font-style: normal;
-        font-weight: normal;
-        font-variant: normal;
-        font-weight: 400;
-        line-height: 20px;
-        margin: 10px 0;
-    }
-    .col {
-	      padding: 1%;
-    }
-    .col-lg{
-        height: 250px;
-        overflow: hidden;
-        margin: 10px 0;
-        position: relative;
-        flex-basis: 25%;
-    }
-
-    .col-lg img{
-    	display:block;
-        position: relative;
-      	margin: .5em;
-        width: 100%;
-      	max-height: 180px;
-      	text-align: center;
-      	overflow: hidden;
-    }
-
-    .col-lg p{
-      text-align: center;
-    }
-
-    .imgrid {
-      display: flex;
-      flex-wrap: wrap;
-    }
-</style>
-
-
-  <h3> Honors and Awards </h3>
-    <ul>
-        <li>ARC Discovery Early Career Researcher Award (DECRA) Fellowship, 2026</li>
-
-        <li>STEM College Higher Degree by Research Prize, RMIT University, 2023</li>
-
-        <li>Best Paper Award, only 1 of 71 accepted papers, European Symposium on Research in Computer Security (ESORICS), 2021</li>
-
-        <hr/>
-
-        <li>STEM College Top High Volume Courses Award, COSC2737 IT Infrastructure and Security, RMIT University, 2025</li>
-        
-        <li>STEM College Learning and Teaching Award for Excellence – Early Career Educator, sole awardee, RMIT University, 2024</li>
-
-        <li>STEM College Top Five Course Award, Security Testing, RMIT University, 2024</li>
-
-        <li>STEM College Top Five Course Award, Security Testing, RMIT University, 2023</li>
-
-        <li>STEM College Top Five Course Award, Cloud Security, RMIT University, 2022</li>
-        <!--
-        <li>1st class scholarship, Henan University, 2013</li>
-        <li>2nd class scholarship, Henan University, 2012</li>
-        
-            <li>Runner up of the National English Contest for College Students(NECCS), 2012</li> -->
+  <section class="panel">
+    <h2 class="section-title"><span class="mark">A</span>Honors and Awards</h2>
+    <ul class="items">
+      <li class="item"><strong>ARC Discovery Early Career Researcher Award (DECRA) Fellowship</strong>, 2026.</li>
+      <li class="item"><strong>STEM College Higher Degree by Research Prize</strong>, RMIT University, 2023.</li>
+      <li class="item"><strong>Best Paper Award</strong>, only 1 of 71 accepted papers, European Symposium on Research in Computer Security (ESORICS), 2021.</li>
+      <li class="item"><strong>STEM College Top High Volume Courses Award</strong>, COSC2737 IT Infrastructure and Security, RMIT University, 2025.</li>
+      <li class="item"><strong>STEM College Learning and Teaching Award for Excellence - Early Career Educator</strong>, sole awardee, RMIT University, 2024.</li>
+      <li class="item"><strong>STEM College Top Five Course Award</strong>, Security Testing, RMIT University, 2024.</li>
+      <li class="item"><strong>STEM College Top Five Course Award</strong>, Security Testing, RMIT University, 2023.</li>
+      <li class="item"><strong>STEM College Top Five Course Award</strong>, Cloud Security, RMIT University, 2022.</li>
     </ul>
-
-
-
-<!-- <h3> Grants </h3>
-    <ul>
-
-    <li>ARC Linkage Project, "Secure and Robust Stream Analytics at Scale", RMIT Lead CI, 2026 - 2029</li>
-
-    <li>ARC DECRA Fellowship, "Secure Deep Learning Inference with Privacy Protection", Lead CI, 2026 - 2029</li>
-
-    <li>ARC Industrial Transformation Research Hub, "Intelligent Contaminant-Sensing in Complex Environments (IC-SensE Hub)", CI, 2026 - 2031</li>
-
-	<li>ARC Linkage Project, "Privacy-Preserving Collaborative Analytics on Sensitive Data", CI, 2024 - 2027</li>
-
-	<li>ARC Discovery Project, "Data Privacy Protection in Wireless Sensor Networks", CI, 2024 - 2027</li>
-
-	<li>Advance HE Global Impact Grant, "Empowering Female Cybersecurity Leaders: Bridging the Gender Gap in Cybersecurity Education", Lead CI, 2024</li>
-
-	<li>CSIRO Next Generation Emerging Technologies Graduates Program, "Privacy-Preserving Machine Learning: Technology Development and Adoption", Investigator, 2023 - 2028</li>
-
-    </ul>
- -->
-
-</div>
+  </section>
+</main>
 </body>
 </html>
