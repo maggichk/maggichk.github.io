@@ -1,157 +1,512 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-    <title>Maggie's Homepage</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Xiaoning Liu">
-    <meta name="keywords" content="Xiaoning Liu, Maggie Liu, Xiaoning Liu RMIT, Maggie Liu RMIT, Xiaoning Maggie Liu RMIT">
-    <meta name="robots" content="index,follow">
-    <meta name="description" content="Homepage of Maggie Liu">
-    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" media="screen,print" href="css/style.css" />
-    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen" />
+    <meta name="author" content="Xiaoning Liu" />
+    <meta name="keywords" content="Xiaoning Liu, Maggie Liu, Xiaoning Liu RMIT, Maggie Liu RMIT, Xiaoning Maggie Liu RMIT" />
+    <meta name="robots" content="index,follow" />
+    <meta name="description" content="Homepage of Maggie Liu" />
+    <title>Maggie's Homepage</title>
+    <style>
+        :root {
+            --bg: #0a0a0b;
+            --card: #1a1a1c;
+            --text: #f7f7f8;
+            --muted: #a9b0bf;
+            --cyan: #67d8f5;
+            --pink: #ff4f8f;
+            --violet: #e0aeff;
+            --orange: #ff9d3c;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at 22% 42%, rgba(255, 61, 119, 0.12), transparent 28%),
+                radial-gradient(circle at 55% 50%, rgba(6, 182, 212, 0.16), transparent 30%),
+                radial-gradient(circle at 80% 48%, rgba(247, 37, 133, 0.13), transparent 30%),
+                var(--bg);
+            color: var(--text);
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            line-height: 1.6;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .page {
+            min-height: 100vh;
+            width: 100%;
+            padding: 56px 24px 64px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .profile {
+            width: min(100%, 936px);
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 36px;
+            align-items: center;
+            margin-bottom: 56px;
+            animation: rise 0.8s ease-out both;
+        }
+
+        .portrait {
+            width: 180px;
+            height: 180px;
+            display: block;
+            overflow: hidden;
+            border-radius: 34px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 24px 70px rgba(0, 0, 0, 0.42);
+        }
+
+        .portrait img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .profile-panel {
+            min-height: 260px;
+            padding: 38px 44px;
+            border-radius: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.035);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 30px 100px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(12px);
+        }
+
+        .profile-panel h1 {
+            margin: 0;
+            font-size: clamp(36px, 5.4vw, 58px);
+            line-height: 1.05;
+            font-weight: 700;
+            letter-spacing: 0;
+            white-space: nowrap;
+            color: transparent;
+            background: linear-gradient(137deg, #ff3d77 0%, #ffb1ce 24%, #7dd3fc 48%, #06b6d4 66%, #e0aeff 84%, #ff9d3c 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        .profile-panel h2 {
+            margin: 20px 0 0;
+            font-size: clamp(22px, 3vw, 30px);
+            line-height: 1.25;
+            color: rgba(255, 255, 255, 0.78);
+            font-weight: 650;
+            letter-spacing: 0;
+        }
+
+        .profile-meta {
+            margin: 34px 0 0;
+            color: var(--muted);
+            font-size: 20px;
+            line-height: 1.8;
+        }
+
+        .profile-meta a {
+            color: #b8ebff;
+            text-decoration: none;
+        }
+
+        .profile-meta a:hover {
+            color: #fff;
+        }
+
+        .profile-meta strong {
+            color: rgba(255, 255, 255, 0.82);
+            font-weight: 700;
+        }
+
+        .profile-meta code {
+            color: rgba(255, 255, 255, 0.76);
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            font-size: 0.95em;
+        }
+
+        .socials {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 30px;
+        }
+
+        .socials a {
+            width: 46px;
+            height: 46px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.13);
+            background: rgba(255, 255, 255, 0.08);
+            transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+        }
+
+        .socials a:hover {
+            transform: translateY(-2px);
+            border-color: rgba(255, 255, 255, 0.28);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .socials img {
+            max-width: 24px;
+            max-height: 24px;
+            display: block;
+        }
+
+        .cards {
+            width: min(100%, 936px);
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 12px;
+            margin-bottom: 56px;
+        }
+
+        .feature {
+            position: relative;
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+            animation: rise 0.8s ease-out both;
+        }
+
+        .feature:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .feature:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .feature:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .feature-glow {
+            position: absolute;
+            inset: 0;
+            height: 300px;
+            opacity: 0.6;
+            border-radius: 40px;
+            filter: blur(45px);
+            pointer-events: none;
+        }
+
+        .feature-card {
+            position: relative;
+            z-index: 1;
+            height: 300px;
+            overflow: hidden;
+            border: 8px solid transparent;
+            border-radius: 40px;
+            transition: transform 240ms ease;
+        }
+
+        .feature:hover .feature-card {
+            transform: translateY(-4px);
+        }
+
+        .feature-content {
+            height: 100%;
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .feature-icon {
+            width: 32px;
+            height: 32px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .feature-title {
+            margin: 0 0 12px;
+            color: #fff;
+            font-size: 22px;
+            line-height: 1.2;
+            font-weight: 650;
+            letter-spacing: 0;
+        }
+
+        .feature-description {
+            margin: 0 0 18px;
+            color: var(--muted);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .feature-links {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255, 255, 255, 0.28);
+            font-size: 15px;
+            font-weight: 650;
+        }
+
+        .feature-links a {
+            color: rgba(255, 255, 255, 0.82);
+            text-decoration: none;
+            transition: color 180ms ease, filter 180ms ease;
+        }
+
+        .feature-links a:hover {
+            color: #fff;
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.45));
+        }
+
+        .bio {
+            width: min(100%, 936px);
+            margin-bottom: 56px;
+            color: rgba(255, 255, 255, 0.82);
+            font-size: 18px;
+            line-height: 1.85;
+        }
+
+        .bio p {
+            margin: 0 0 24px;
+        }
+
+        .news {
+            width: min(100%, 936px);
+            padding: 32px;
+            border-radius: 34px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.035);
+            color: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(12px);
+        }
+
+        .news h2 {
+            margin: 0 0 22px;
+            color: #fff;
+            font-size: 26px;
+            line-height: 1.2;
+            letter-spacing: 0;
+        }
+
+        .news ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: grid;
+            gap: 14px;
+        }
+
+        .news li {
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .news .date {
+            color: rgba(255, 255, 255, 0.76);
+            font-weight: 750;
+        }
+
+        .news a {
+            color: #b8ebff;
+            text-decoration: none;
+        }
+
+        .news a:hover {
+            color: #fff;
+        }
+
+        @keyframes rise {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 820px) {
+            .page {
+                padding: 32px 18px 48px;
+            }
+
+            .profile {
+                grid-template-columns: 1fr;
+                gap: 24px;
+                margin-bottom: 44px;
+                text-align: center;
+            }
+
+            .portrait {
+                margin: 0 auto;
+            }
+
+            .profile-panel {
+                padding: 28px;
+                border-radius: 34px;
+            }
+
+            .profile-meta {
+                font-size: 17px;
+            }
+
+            .socials {
+                justify-content: center;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .feature {
+                max-width: 300px;
+            }
+
+            .bio {
+                font-size: 16px;
+            }
+        }
+    </style>
 </head>
 
 <body>
-<div class="container">
-<br>
-<br>
+<main class="page">
+    <section class="profile" aria-label="Profile">
+        <a class="portrait" href="images/profile.jpeg">
+            <img src="images/profile.jpeg" alt="Xiaoning Maggie Liu" />
+        </a>
 
+        <div class="profile-panel">
+            <h1>Xiaoning (Maggie) Liu</h1>
+            <h2>Senior Lecturer, ARC DECRA Fellow</h2>
 
-<div class="row">
-<div class="col-sm-3">
-<a href="images/profile.jpeg">
-<img class="img-responsive" style="max-height:200px;" src="images/profile.jpeg"/>
-</a>
-</div>
+            <p class="profile-meta">
+                <a href="https://www.rmit.edu.au/about/schools-colleges/computing-technologies">School of Computing Technologies</a><br />
+                <a href="https://www.rmit.edu.au/">RMIT University</a><br />
+                <strong>Email</strong>: <code>xiaoning.liu@rmit.edu.au</code>
+            </p>
 
-<div class="col-sm-9">
-<div class="clearfix visible-xs-block"></div>
-<h1>Xiaoning (Maggie) Liu </h1>
-<h3>Senior Lecturer, ARC DECRA Fellow</h3>
-<p style="font-size: 20px">
-<a href="https://www.rmit.edu.au/about/schools-colleges/computing-technologies">School of Computing Technologies</a><br> 
-<a href="https://www.rmit.edu.au/">RMIT University</a><br>
-<b>Email</b>: <tt>xiaoning.liu@rmit.edu.au</tt> <br>
-<div class="col-xs-2">
-<a href="https://scholar.google.com/citations?user=hjxSs-UAAAAJ&hl=en" title="gscholar"><img src="./images/gscholar.png" style="max-height:30px;" class="img-responsive"></a>
-</div>
-<div class="col-xs-2">
-<a href="https://orcid.org/0000-0002-9874-8839" title="ORCID"><img src="./images/orcid.svg" style="max-height:30px;" class="img-responsive"></a>
-</div>
-<div class="col-xs-2">
-<a href="https://www.linkedin.com/in/xiaoning-maggie-liu-79777316a/" title="linkedin"><img src="./images/linkedin.png" style="max-height:30px;" class="img-responsive"></a>
-</div>
-<div class="col-xs-2">
-<a href="https://twitter.com/maggie_cityu" title="twitter"><img src="./images/twitter.png" style="max-height:30px;" class="img-responsive"></a>
-</div>
-</p>
-</div>
-</div>
+            <div class="socials" aria-label="Profile links">
+                <a href="https://scholar.google.com/citations?user=hjxSs-UAAAAJ&hl=en" title="gscholar">
+                    <img src="./images/gscholar.png" alt="gscholar" />
+                </a>
+                <a href="https://orcid.org/0000-0002-9874-8839" title="ORCID">
+                    <img src="./images/orcid.svg" alt="ORCID" />
+                </a>
+                <a href="https://www.linkedin.com/in/xiaoning-maggie-liu-79777316a/" title="linkedin">
+                    <img src="./images/linkedin.png" alt="linkedin" />
+                </a>
+                <a href="https://twitter.com/maggie_cityu" title="twitter">
+                    <img src="./images/twitter.png" alt="twitter" />
+                </a>
+            </div>
+        </div>
+    </section>
 
-<hr/>
-<h3>
-  <a href="index.html">Home</a> /
-  <a href="papers.html">Research</a> /
-  <a href="people.html">People</a> /
-  <a href="teaching.html">Teaching</a> /
-  <a href="service.html">Service</a> /
-  <a href="talk.html">Talk</a> /
-  <a href="award.html">Award</a>
-</h3>
-<hr/>
+    <section class="cards" aria-label="Academic pages">
+        <article class="feature">
+            <div class="feature-glow" style="background: linear-gradient(137deg, #FF3D77 0%, #FFB1CE 45%, #FF9D3C 100%);"></div>
+            <div class="feature-card" style="background: linear-gradient(#1A1A1C, #1A1A1C) padding-box, linear-gradient(137deg, #FF3D77 0%, #FFB1CE 45%, #FF9D3C 100%) border-box;">
+                <div class="feature-content">
+                    <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <rect width="20" height="14" x="2" y="3" rx="2"></rect>
+                        <line x1="8" x2="16" y1="21" y2="21"></line>
+                        <line x1="12" x2="12" y1="17" y2="21"></line>
+                    </svg>
+                    <div>
+                        <h2 class="feature-title">Research</h2>
+                        <p class="feature-description">SC2ale: Secure Collaborative Computation at Scale</p>
+                        <nav class="feature-links" aria-label="Research links">
+                            <a href="papers.html">Research</a>
+                            <span>/</span>
+                            <a href="people.html">People</a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </article>
 
+        <article class="feature">
+            <div class="feature-glow" style="background: linear-gradient(137deg, #FFFFFF 0%, #7DD3FC 45%, #06B6D4 100%);"></div>
+            <div class="feature-card" style="background: linear-gradient(#1A1A1C, #1A1A1C) padding-box, linear-gradient(137deg, #FFFFFF 0%, #7DD3FC 45%, #06B6D4 100%) border-box;">
+                <div class="feature-content">
+                    <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle>
+                        <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle>
+                        <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle>
+                        <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle>
+                        <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2c5.523 0 10 4.477 10 10 0 1.21-.216 2.37-.611 3.443-.227.617-.34.925-.24 1.194.1.27.373.457.917.831.527.361.727 1.061.456 1.638-.276.587-.868.894-1.513.781-.675-.118-1.027-.178-1.302-.033-.275.144-.431.485-.742 1.167C17.842 21.42 15.12 22 12 22Z"></path>
+                    </svg>
+                    <div>
+                        <h2 class="feature-title">Teaching</h2>
+                        <p class="feature-description">Courses, invited seminars, and knowledge sharing.</p>
+                        <nav class="feature-links" aria-label="Teaching links">
+                            <a href="teaching.html">Teaching</a>
+                            <span>/</span>
+                            <a href="talk.html">Talk</a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </article>
 
+        <article class="feature">
+            <div class="feature-glow" style="background: linear-gradient(137deg, #4361EE 0%, #E0AEFF 45%, #F72585 100%);"></div>
+            <div class="feature-card" style="background: linear-gradient(#1A1A1C, #1A1A1C) padding-box, linear-gradient(137deg, #4361EE 0%, #E0AEFF 45%, #F72585 100%) border-box;">
+                <div class="feature-content">
+                    <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path>
+                    </svg>
+                    <div>
+                        <h2 class="feature-title">Miscellaneous</h2>
+                        <p class="feature-description">Community roles, editorial service, and recognitions.</p>
+                        <nav class="feature-links" aria-label="Miscellaneous links">
+                            <a href="service.html">Service</a>
+                            <span>/</span>
+                            <a href="award.html">Award</a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </section>
 
-<p>
-I am an ARC Discovery Early Career Researcher Awardee (DECRA Fellow) and a Senior Lecturer (US Associate Professor equivalent) at the School of Computing Technologies, RMIT University, Melbourne, Australia. I earned my Ph.D. degree in Computer Science at RMIT University in 2022.
-<!-- , under the supervision of <a href="https://scholar.google.com/citations?user=oDRazncAAAAJ&hl=en">Prof. Xun Yi</a>. During that time, I was fortunate to be mentored by <a href="https://yifengzcs.github.io/">Dr. Yifeng Zheng</a>. </br> -->
-</p>
+    <section class="bio" aria-label="Biography">
+        <p>I am an ARC Discovery Early Career Researcher Awardee (DECRA Fellow) and a Senior Lecturer (US Associate Professor equivalent) at the School of Computing Technologies, RMIT University, Melbourne, Australia. I earned my Ph.D. degree in Computer Science at RMIT University in 2022.</p>
 
-<p>
-I am the recipient of the ARC DECRA Award 2026, the sole Best Paper Award of ESORICS 2021, the RMIT HDR Research Prize 2023. My work has appeared in prestigious venues in computer security, such as USENIX Security, NDSS, IEEE TDSC, TIFS. I have served on the technical program committee (TPC member) of USENIX Security, EuroS&P, ASIACCS, and the program co-chair of LAMPS at CCS 2025. I also serve as an Associate Editor for IEEE TSC. </br>
-</p>
-<hr/>
+        <p>I am the recipient of the ARC DECRA Award 2026, the sole Best Paper Award of ESORICS 2021, the RMIT HDR Research Prize 2023. My work has appeared in prestigious venues in computer security, such as USENIX Security, NDSS, IEEE TDSC, TIFS. I have served on the technical program committee (TPC member) of USENIX Security, EuroS&amp;P, ASIACCS, and the program co-chair of LAMPS at CCS 2025. I also serve as an Associate Editor for IEEE TSC.</p>
+    </section>
 
-<h3 id="research">Research</h3>
-<p>
-    <!-- My research interests focuses on the design, analysis, and fielding of privacy-enhancing technologies to address data privacy and security issues.  -->
-
-    I have been working on secure multi-party computation and its applications in privacy-preserving machine learning. My goal is to build impactful work that is expected to push forward the deployment of PPML on practical usages. My design philosophy is:
-    <ul>
-        <li>Devising lightweight and fundamental secure computation protocols. I am particularly interested in the cryptographic techniques like secure multiparty computation, function secret sharing, zero knowledge proof. </li> </br>
-
-        <li>Unveiling and mitigating output privacy risks. Legitimate secure inference results can still be exploited by AI attacks to recover the AI model and its training data information, resulting in output privacy breach. I aim to set out the systematic investigation of such an exploitation and enable mitigation techniques to remedy the risks, like guarding membership privacy (<a href="papers/siguard.pdf">SIGuard</a>). </li> </br>
-
-        <li>Building secure and practical PPML systems that harness the insights from computer systems, cryptography, machine learning. I conduct interdisciplinary research empowering versatile real-world service scenarios, like MLaaS (<a href="papers/medisc.pdf">MediSC</a>), deep graph learning (<a href="paper/oblivgnn">OblivGNN</a>), secure outsourced computation in the cloud (<a href="paper/sonic">Sonic</a>), mobile-edge computing (<a href="papers/leia.pdf">Leia</a>). </li> </br>
-    </ul>
-</p>
-
-
-
-
-<hr/>
-<h3 id="news">News</h3>
-<div>
-    <ul>
-        <li> [Apr 26] Our paper "Hardening Output Privacy for Secure Inference: a Lightweight Realization via Distributed Trust" has been accepted by ICDCS'26. Congrats, Xinqian! </li>
-        <li> [Apr 26] I am invited to serve on the program committee for PETS'27/PoPETs'27, CIKM'26, ICDCS'26, ProvSec'26. </li>
-        <li> [Mar 26] I am invited to give a talk "SIGuard: Guarding Secure Inference with Post Data Privacy" at UQ Data Science Discipline Seminar Series – Responsible AI, University of Queensland. </li>
-        <li> [Feb 26] I am invited to give a talk "Oblivious Inference on Graph Neutral Network" at the National Research Center on Digital Trust, NTU, Singapore. </li>
-        <li> [Jul 25] Our paper "Unsupervised Backdoor Detection and Mitigation for Spiking Neural Networks" has been accepted by RAID'25. Congrats, Jiachen! </li>
-        <li> [Dec 24] Our paper "SIGuard: Guarding Secure Inference with Post Data Privacy" has been accepted by NDSS'25. Congrats, Xinqian! </li>
-        <li> [Dec 24] I have been awarded the sole STEM College Learning and Teaching Award for Excellence – Early Career Educator 2024. </li>
-        <li> [Oct 21] Our paper <a href="papers/medisc.pdf">"MediSC: Towards Secure and Lightweight Deep Learning as a Medical Diagnostic Service"</a> has received the Best Paper Award of ESORICS 2021. </li>
-    </ul>
-</div>
-<hr/>
-
-
-    
-<!--
-<h3 id="education">Education / Experience</h3>
-<ul>
-<li> 2018-2022 Ph.D. in Computer Science, RMIT University, Australia </li>
-<li> 2013-2014 M.Sc. in Computer Science, City University of Hong Kong, HKSAR </li>
-<li> 2009-2013 B.Eng. in Computer Science and Information Technologies, Henan University, China </li>
-</ul>
-<ul>
-<li> 01/2022-08/2022 Research Fellow, RMIT University, Australia </li>
-<li> 07/2016-07/2017 Research Assistant, City University of Hong Kong, HKSAR </li>
-<li> 07/2014-07/2016 Software Engineer, IT Channel (Asia) Limited, HKSAR </li>
-</ul>
--->
-
-<h3 id="links">Useful Links</h3>
-<ul>
-    <li>MPC Papers, Tutorials, and Frameworks</li>
-    <ul>
-        <li>PPML-Resource: <a href="https://github.com/Ye-D/PPML-Resource">https://github.com/Ye-D/PPML-Resource</a></li>
-        <li>Awesome-ML-Security-and-Privacy-Papers: <a href="https://github.com/gnipping/Awesome-ML-SP-Papers">https://github.com/gnipping/Awesome-ML-SP-Papers</a></li>
-    </ul>
-    <li>Quality Research</li>
-    <ul>
-        <li>Quality Research in Affordable Ways by Dr. Qiang Yan: <a href="http://www.mysmu.edu/phdis2008/qiang.yan.2008/Doc/Quality%20Research%20in%20Affordable%20Way.pdf">http://www.mysmu.edu/phdis2008/qiang.yan.2008/Doc/Quality%20Research%20in%20Affordable%20Way.pdf</a></li>
-        <li>Scientific Writing Skills by Prof. Guanrong Chen: <a href="http://www.ee.cityu.edu.hk/~gchen/pdf/Writing.pdf">http://www.ee.cityu.edu.hk/~gchen/pdf/Writing.pdf</a></li>
-     </ul>
-    <li>Computer Security Conference Ranking and Statistic</li>
-    <ul>
-        <li><a href="http://jianying.space/conference-ranking.html">http://jianying.space/conference-ranking.html</a></li>
-        <!-- <li><a href="https://scholar.google.com/citations?view_op=top_venues&hl=en&vq=eng_computersecuritycryptography">https://scholar.google.com/citations?view_op=top_venues&hl=en&vq=eng_computersecuritycryptography</a></li> -->
-        <li><a href="http://faculty.cs.tamu.edu/guofei/sec_conf_stat.htm">http://faculty.cs.tamu.edu/guofei/sec_conf_stat.htm</a></li>
-    </ul>
-    <li>Security and Privacy Conference Deadline</li>
-    <ul>
-        <li><a href="https://sec-deadlines.github.io/">https://sec-deadlines.github.io/</a></li>
-    </ul>
-</ul>
-
-
-<hr/>
-<p>Last update: 2026/01</p>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-</div>
+    <section class="news" aria-label="News">
+        <h2 id="news">News</h2>
+        <ul>
+            <li><span class="date">[Apr 26]</span> Our paper "Hardening Output Privacy for Secure Inference: a Lightweight Realization via Distributed Trust" has been accepted by ICDCS'26. Congrats, Xinqian!</li>
+            <li><span class="date">[Apr 26]</span> I am invited to serve on the program committee for PETS'27/PoPETs'27, CIKM'26, ICDCS'26, ProvSec'26.</li>
+            <li><span class="date">[Mar 26]</span> I am invited to give a talk "SIGuard: Guarding Secure Inference with Post Data Privacy" at UQ Data Science Discipline Seminar Series - Responsible AI, University of Queensland.</li>
+            <li><span class="date">[Feb 26]</span> I am invited to give a talk "Oblivious Inference on Graph Neutral Network" at the National Research Center on Digital Trust, NTU, Singapore.</li>
+            <li><span class="date">[Jul 25]</span> Our paper "Unsupervised Backdoor Detection and Mitigation for Spiking Neural Networks" has been accepted by RAID'25. Congrats, Jiachen!</li>
+            <li><span class="date">[Dec 24]</span> Our paper "SIGuard: Guarding Secure Inference with Post Data Privacy" has been accepted by NDSS'25. Congrats, Xinqian!</li>
+            <li><span class="date">[Dec 24]</span> I have been awarded the sole STEM College Learning and Teaching Award for Excellence - Early Career Educator 2024.</li>
+            <li><span class="date">[Oct 21]</span> Our paper <a href="papers/medisc.pdf">"MediSC: Towards Secure and Lightweight Deep Learning as a Medical Diagnostic Service"</a> has received the Best Paper Award of ESORICS 2021.</li>
+        </ul>
+    </section>
+</main>
 </body>
 </html>
