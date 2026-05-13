@@ -122,6 +122,72 @@
         color: #fff;
       }
 
+      .theme-panel {
+        margin-top: 28px;
+        border: 1px solid var(--line);
+        border-radius: 34px;
+        background: rgba(255, 255, 255, 0.035);
+        box-shadow: 0 20px 70px rgba(0, 0, 0, 0.28);
+        padding: 28px;
+        backdrop-filter: blur(16px);
+      }
+
+      .theme-panel h2 {
+        margin: 0 0 14px;
+        color: #fff;
+        font-size: clamp(21px, 3vw, 28px);
+        font-weight: 680;
+        letter-spacing: 0;
+      }
+
+      .theme-panel p {
+        max-width: 860px;
+        margin: 0;
+        color: rgba(255, 255, 255, 0.74);
+        font-size: 16px;
+        line-height: 1.7;
+      }
+
+      .theme-list {
+        display: grid;
+        gap: 14px;
+        margin: 20px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .theme-list li {
+        position: relative;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        background: linear-gradient(145deg, rgba(26, 26, 28, 0.78), rgba(255, 255, 255, 0.035));
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 15px;
+        line-height: 1.65;
+        padding: 16px 18px 16px 46px;
+      }
+
+      .theme-list li::before {
+        content: "";
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: linear-gradient(137deg, var(--pink), var(--cyan), var(--orange));
+        box-shadow: 0 0 18px rgba(125, 211, 252, 0.5);
+      }
+
+      .theme-list a {
+        color: #bae6fd;
+        text-decoration: none;
+      }
+
+      .theme-list a:hover {
+        color: #fff;
+      }
+
       .paper-section {
         margin-top: 28px;
         border: 1px solid var(--line);
@@ -299,12 +365,17 @@
         }
 
         .hero,
+        .theme-panel,
         .paper-section {
           border-radius: 26px;
         }
 
         .hero {
           padding: 24px 20px;
+        }
+
+        .theme-panel {
+          padding: 22px 20px;
         }
 
         .paper-section summary {
@@ -340,6 +411,16 @@
       <a href="talk.html">Talk</a>
       <a href="award.html">Award</a>
     </nav>
+  </section>
+
+  <section class="theme-panel" aria-labelledby="research-themes">
+    <h2 id="research-themes">Research Themes</h2>
+    <p>I have been working on secure multi-party computation and its applications in privacy-preserving machine learning. My goal is to build impactful work that is expected to push forward the deployment of PPML on practical usages. My design philosophy is:</p>
+    <ul class="theme-list">
+      <li>Devising lightweight and fundamental secure computation protocols. I am particularly interested in the cryptographic techniques like secure multiparty computation, function secret sharing, zero knowledge proof.</li>
+      <li>Unveiling and mitigating output privacy risks. Legitimate secure inference results can still be exploited by AI attacks to recover the AI model and its training data information, resulting in output privacy breach. I aim to set out the systematic investigation of such an exploitation and enable mitigation techniques to remedy the risks, like guarding membership privacy (<a href="papers/siguard.pdf">SIGuard</a>).</li>
+      <li>Building secure and practical PPML systems that harness the insights from computer systems, cryptography, machine learning. I conduct interdisciplinary research empowering versatile real-world service scenarios, like MLaaS (<a href="papers/medisc.pdf">MediSC</a>), deep graph learning (<a href="papers/oblivgnn.pdf">OblivGNN</a>), secure outsourced computation in the cloud (<a href="papers/sonic.pdf">Sonic</a>), mobile-edge computing (<a href="papers/leia.pdf">Leia</a>).</li>
+    </ul>
   </section>
 
 
