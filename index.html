@@ -55,7 +55,7 @@
         .profile {
             width: min(100%, 936px);
             display: grid;
-            grid-template-columns: 180px 1fr;
+            grid-template-columns: 180px minmax(0, 1fr);
             gap: 36px;
             align-items: center;
             margin-bottom: 56px;
@@ -82,7 +82,7 @@
 
         .profile-panel {
             min-height: 260px;
-            padding: 38px 44px;
+            padding: 32px 36px;
             border-radius: 40px;
             border: 1px solid rgba(255, 255, 255, 0.12);
             background: rgba(255, 255, 255, 0.035);
@@ -92,11 +92,10 @@
 
         .profile-panel h1 {
             margin: 0;
-            font-size: clamp(36px, 5.4vw, 58px);
+            font-size: 52px;
             line-height: 1.05;
             font-weight: 700;
             letter-spacing: 0;
-            white-space: nowrap;
             color: transparent;
             background: linear-gradient(137deg, #ff3d77 0%, #ffb1ce 24%, #7dd3fc 48%, #06b6d4 66%, #e0aeff 84%, #ff9d3c 100%);
             -webkit-background-clip: text;
@@ -104,8 +103,8 @@
         }
 
         .profile-panel h2 {
-            margin: 20px 0 0;
-            font-size: clamp(22px, 3vw, 30px);
+            margin: 16px 0 0;
+            font-size: 26px;
             line-height: 1.25;
             color: rgba(255, 255, 255, 0.78);
             font-weight: 650;
@@ -113,9 +112,9 @@
         }
 
         .profile-meta {
-            margin: 34px 0 0;
+            margin: 26px 0 0;
             color: var(--muted);
-            font-size: 20px;
+            font-size: 18px;
             line-height: 1.8;
         }
 
@@ -142,13 +141,13 @@
         .socials {
             display: flex;
             flex-wrap: wrap;
-            gap: 14px;
-            margin-top: 30px;
+            gap: 12px;
+            margin-top: 24px;
         }
 
         .socials a {
-            width: 46px;
-            height: 46px;
+            width: 44px;
+            height: 44px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -277,12 +276,39 @@
             width: min(100%, 936px);
             margin-bottom: 56px;
             color: rgba(255, 255, 255, 0.82);
-            font-size: 18px;
+            font-size: 16px;
             line-height: 1.85;
         }
 
         .bio p {
             margin: 0 0 24px;
+        }
+
+        .main-research {
+            width: min(100%, 936px);
+            margin-bottom: 56px;
+            color: rgba(255, 255, 255, 0.82);
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .main-research p {
+            margin: 0 0 22px;
+        }
+
+        .theme-list {
+            display: grid;
+            gap: 18px;
+            margin: 0;
+            padding-left: 24px;
+        }
+
+        .theme-list li {
+            padding-left: 6px;
+        }
+
+        .theme-list li::marker {
+            color: var(--cyan);
         }
 
         .news {
@@ -295,6 +321,7 @@
             backdrop-filter: blur(12px);
         }
 
+        .main-research h2,
         .news h2 {
             margin: 0 0 22px;
             color: #fff;
@@ -305,10 +332,20 @@
 
         .news ul {
             margin: 0;
-            padding: 0;
+            padding: 0 14px 0 0;
             list-style: none;
             display: grid;
             gap: 14px;
+            max-height: min(420px, 60vh);
+            overflow-y: auto;
+            scrollbar-gutter: stable;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(125, 211, 252, 0.5) rgba(255, 255, 255, 0.06);
+        }
+
+        .news ul:focus-visible {
+            outline: 2px solid var(--cyan);
+            outline-offset: 6px;
         }
 
         .news li {
@@ -321,11 +358,13 @@
             font-weight: 750;
         }
 
+        .main-research a,
         .news a {
             color: #b8ebff;
             text-decoration: none;
         }
 
+        .main-research a:hover,
         .news a:hover {
             color: #fff;
         }
@@ -358,12 +397,20 @@
             }
 
             .profile-panel {
-                padding: 28px;
+                padding: 24px;
                 border-radius: 34px;
             }
 
+            .profile-panel h1 {
+                font-size: 36px;
+            }
+
+            .profile-panel h2 {
+                font-size: 22px;
+            }
+
             .profile-meta {
-                font-size: 17px;
+                font-size: 16px;
             }
 
             .socials {
@@ -381,6 +428,14 @@
 
             .bio {
                 font-size: 16px;
+            }
+
+            .news {
+                padding: 24px;
+            }
+
+            .news ul {
+                max-height: min(360px, 55vh);
             }
         }
     </style>
@@ -494,9 +549,19 @@
         <p>I am the recipient of the ARC DECRA Award 2026, the sole Best Paper Award of ESORICS 2021, the RMIT HDR Research Prize 2023. My work has appeared in prestigious venues in computer security, such as USENIX Security, NDSS, IEEE TDSC, TIFS. I have served on the technical program committee (TPC member) of USENIX Security, EuroS&amp;P, ASIACCS, and the program co-chair of LAMPS at CCS 2025. I also serve as an Associate Editor for IEEE TSC.</p>
     </section>
 
+    <section class="main-research" aria-labelledby="main-research">
+        <h2 id="main-research">Research</h2>
+        <p>I have been working on secure computation and its applications in privacy-preserving machine learning. My goal is to build impactful work that is expected to push forward the deployment of PPML on practical usages. My design philosophy is:</p>
+        <ul class="theme-list">
+            <li>Devising lightweight and fundamental secure computation protocols. I am particularly interested in the cryptographic techniques like secure multiparty computation, function secret sharing, zero knowledge proof.</li>
+            <li>Unveiling and mitigating output privacy risks. Legitimate secure inference results can still be exploited by AI attacks to recover the AI model and its training data information, resulting in output privacy breach. I aim to set out the systematic investigation of such an exploitation and enable mitigation techniques to remedy the risks, like guarding membership privacy (<a href="papers/siguard.pdf">SIGuard</a>).</li>
+            <li>Building secure and practical PPML systems that harness the insights from computer systems, cryptography, machine learning. I conduct interdisciplinary research empowering versatile real-world service scenarios, like MLaaS (<a href="papers/medisc.pdf">MediSC</a>), deep graph learning (<a href="papers/oblivgnn.pdf">OblivGNN</a>), secure outsourced computation in the cloud (<a href="papers/sonic.pdf">Sonic</a>), mobile-edge computing (<a href="papers/leia.pdf">Leia</a>).</li>
+        </ul>
+    </section>
+
     <section class="news" aria-label="News">
         <h2 id="news">News</h2>
-        <ul>
+        <ul tabindex="0" aria-labelledby="news">
             <li><span class="date">[Sep 26]</span> Our papers "OblivDGL: Oblivious Deep Graph Learning Made Practical" and "RASE: Regulation-Aware Multi-User Searchable Encryption for Cross-Domain Data Sharing" have been accepted by NDSS'27.</li>
             <li><span class="date">[Jul 26]</span> Our paper "Disjunctive Searchable Encryption with Comprehensive Forward and Backward Privacy" has been accepted by ProvSec'26. Congrats, Jinhui!</li>
             <li><span class="date">[May 26]</span> I am honored to be invited as the panel member at <a href="https://www.ntu.edu.sg/dtc/the-third-digital-trust-symposium">the Third Symposium on Digital Trust</a>, Nanyang Technological University, 2026. </li>
