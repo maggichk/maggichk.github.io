@@ -420,6 +420,19 @@ function copy(dest, source) {
 
         document.write("<ul class=\"paper-list\">")
 
+        add_paper("Secure Prompt Tuning Service: A Private and Gradient-free Realization",
+            "Xinyu Tu and <b>Xiaoning Liu</b>",
+            "IEEE Transactions on Services Computing, 2026",
+            "https://ieeexplore.ieee.org/abstract/document/11698666/",//link
+            "@article{tu2026secureprompt, author={Tu, Xinyu and Liu, Xiaoning}, title={Secure Prompt Tuning Service: A Private and Gradient-free Realization}, journal={IEEE Transactions on Services Computing}, year={2026}, pages={1--12}, doi={10.1109/TSC.2026.3735318}, url={https://ieeexplore.ieee.org/document/11698666/}}",//bib
+            "Prompt tuning is a practical paradigm for adapting pre-trained models to downstream tasks without updating model weights, yet deploying it in privacy-sensitive scenarios remains an open problem. Gradient-based approaches incur unavoidable backpropagation overhead even with a fully frozen backbone. We observe that in cross-silo settings, enterprises typically possess sufficient local compute to evaluate pre-trained models on-premise. The bottleneck becomes securely pooling data distributed over multiple parties and generating a suitable prompt for a specific task while preventing data leakage. In this paper, we propose Secure Gradient-Free Prompt Tuning (SGFPT), built on a semi-honest two-server Secure Multi-party Computation (MPC) model. SGFPT adopts the Covariance Matrix Adaptation Evolution Strategy (CMA-ES) as a gradient-free optimizer. In each generation, the service provider securely generates multiple candidate prompts. By offloading evaluations of these prompts to the enterprises, SGFPT can efficiently identify the most suitable candidates on their own datasets. These evaluation results are then secret-shared with the service provider, which securely aggregates them to drive the next generation of prompts. The whole process yields a secure, accurate, and efficient prompt generation service for cross-silo prompt tuning. Realizing the evolutionary strategy under MPC is non-trivial. CMA-ES imposes a heavy communication cost, primarily due to secure eigen-decomposition and secure normal distribution generation. SGFPT introduces two co-designs to reduce these operations to lightweight scalar arithmetic. Experiments across 10 downstream tasks on Vision-Language Models and Large Language Models show that SGFPT matches plaintext prompt tuning accuracy within −1.4% to +2.4%, while reducing communication overhead by four orders of magnitude relative to prior secure prompt tuning approaches that require the entire inference pipeline to run under encryption.",//abstract
+            null,//paper
+            null,
+            null,
+            null,
+            null
+        )
+
         add_paper("Hardening Output Privacy for Secure Inference: a Lightweight Realization via Distributed Trust",
             "Xinqian Wang, <b>Xiaoning Liu</b>, Shangqi Lai, Xun Yi, Ibrahim Khalil, Kwok-Yan Lam",
             "In the 46th IEEE International Conference on Distributed Computing Systems (ICDCS), 2026",
