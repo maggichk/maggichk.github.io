@@ -47,8 +47,7 @@
       }
 
       .hero,
-      .section-panel,
-      .callout {
+      .section-panel {
         border: 1px solid var(--line);
         border-radius: 34px;
         background: linear-gradient(145deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.025));
@@ -230,26 +229,36 @@
         border-color: rgba(255, 157, 60, 0.28);
       }
 
-      .callout {
-        margin-top: 28px;
-        padding: 24px 28px;
-        background:
-          linear-gradient(145deg, rgba(255, 61, 119, 0.11), rgba(125, 211, 252, 0.06)),
-          rgba(255, 255, 255, 0.035);
+      .prospective-students {
+        font-size: 16px;
+        line-height: 1.65;
       }
 
-      .callout-title {
-        margin: 0 0 8px;
+      .prospective-students h3 {
+        margin: 1.5em 0 0.4em;
         color: #fff;
-        font-size: 19px;
-        font-weight: 750;
+        font-size: 20px;
+        line-height: 1.3;
       }
 
-      .callout p {
+      .prospective-students p,
+      .prospective-students ul {
+        max-width: 80ch;
         margin: 0;
-        color: rgba(255, 255, 255, 0.7);
-        font-size: 15px;
-        line-height: 1.7;
+      }
+
+      .prospective-students ul {
+        padding-inline-start: 1.4em;
+      }
+
+      .prospective-students li + li,
+      .prospective-students p + p {
+        margin-top: 0.75em;
+      }
+
+      .prospective-students a,
+      .prospective-students li::marker {
+        color: var(--cyan);
       }
 
       @media (max-width: 760px) {
@@ -264,8 +273,7 @@
         }
 
         .hero,
-        .section-panel,
-        .callout {
+        .section-panel {
           border-radius: 26px;
           padding: 22px 20px;
         }
@@ -354,10 +362,26 @@
     </div>
   </section>
 
-  <aside class="callout">
-    <h2 class="callout-title">RA/MPhil/Ph.D. Positions Available</h2>
-    <p>I am looking for self-motivated students in AI Privacy and Security, Secure Multi-Party Computation. If interested, please email me your CV and transcripts.</p>
-  </aside>
+  <section class="section-panel prospective-students" id="prospective-students" aria-labelledby="prospective-students-heading">
+    <h2 class="section-heading" id="prospective-students-heading"><span class="heading-mark" aria-hidden="true">P</span>For Prospective Students</h2>
+    <p>I am recruiting PhD students to join my group at <strong>RMIT University in Melbourne</strong>. I welcome enquiries from domestic and international applicants. My group works on <strong>privacy-preserving computing, data security and privacy, and the privacy and security of AI systems</strong>.</p>
+
+    <h3>What I look for</h3>
+    <p>I look for students with a background in computer science, cybersecurity, AI or a related field. Strong candidates typically have <strong>an academic average of 80/100 or equivalent</strong> and either a research-based master&rsquo;s degree or a coursework master&rsquo;s degree with a relevant first-author publication. I value curiosity, initiative and strong programming skills, particularly the ability to turn a research idea into a working implementation and evaluate it carefully. <a href="https://www.rmit.edu.au/research/research-degrees/how-to-apply?activeTab=2.+Check+your+eligibility">RMIT entry requirements</a></p>
+
+    <h3>Scholarship opportunities</h3>
+    <ul>
+      <li><strong>RMIT&ndash;China Scholarship Council Joint Funding Program.</strong> Chinese citizens applying for a full-time STEM PhD at RMIT in Australia can apply for tuition coverage and a combined living stipend of <strong>A$36,963 per year at the 2027 rate</strong>. Apply to RMIT by <strong>1 February 2027</strong>, then apply separately to CSC after receiving your RMIT offer. <a href="https://www.rmit.edu.au/scholarships/international-scholarships/china-scholarship-council-rmit-joint-scholarship">RMIT&ndash;CSC scholarship</a></li>
+      <li><strong>CSIRO Industry PhD.</strong> If you are interested in our industry research on protecting sensitive data from unauthorised use in AI training, please email me about project availability. The scheme is open to Australian and New Zealand citizens and Australian permanent residents. The 2027 starting stipend is <strong>A$49,513 per year</strong>, including the industry top-up. <a href="https://www.csiro.au/en/careers/Scholarships-student-opportunities/Postgraduate-programs-and-Scholarships/Industry-PhD/iPhD-Student">CSIRO Industry PhD program</a></li>
+      <li><strong>Project Scholarship in Privacy-Preserving Machine Learning.</strong> This project aims to develop lightweight protocols for fundamental secure computations and to identify and mitigate privacy risks arising from the outputs of existing privacy-preserving machine learning (PPML) systems. Applicants for this scholarship must have published <strong>at least one first-author paper</strong> at a conference ranked A* or A by CORE, or in a CCF-A venue.</li>
+      <li><strong>RMIT centrally awarded research scholarships.</strong> These include Australian Government Research Training Program and RMIT research stipends. The central round for 2027 entry has closed. Project-funded scholarships have their own application dates. <a href="https://www.rmit.edu.au/scholarships/research">RMIT research scholarship rounds</a></li>
+    </ul>
+
+    <h3>How to apply</h3>
+    <p><strong>First, email me at <a href="mailto:xiaoning.liu@rmit.edu.au">xiaoning.liu@rmit.edu.au</a></strong> with your CV, undergraduate and postgraduate transcripts, English test results if applicable, and a <strong>1&ndash;2 page research plan</strong>. Tell me which problem you would like to work on, why it matters and how you might approach it. An early idea is welcome.</p>
+    <p>Once we have discussed the project and agreed on supervision in principle, we complete RMIT&rsquo;s supervisor supporting statement. You then submit it with your <strong>Expression of Interest (EOI)</strong>. If your EOI is successful, RMIT will invite you to submit a full application. <a href="https://www.rmit.edu.au/research/research-degrees/how-to-apply">RMIT research degree application guide</a></p>
+  </section>
+
 </main>
 </body>
 </html>
